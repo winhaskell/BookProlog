@@ -20,7 +20,34 @@ next_turn(N) :-
 	).
 
 
-	
-  
+
+
+?- nim.
+How many dots would you like to take? 2
+You take 2 dots
+10 dots remaining.
+
+Computer takes 2 dots
+8 dots remaining.
+
+How many dots would you like to take? 2
+You take 2 dots
+6 dots remaining.
+
+Computer takes 2 dots
+4 dots remaining.
+
+How many dots would you like to take? 3
+You take 3 dots
+1 dots remaining.
+
+Computer takes 1 dots
+0 dots remaining.
+
+Computer wins!
+true.
+
+
+
   
   
