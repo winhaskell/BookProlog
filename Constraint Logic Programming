@@ -1,0 +1,53 @@
+Constraint Logic Programming
+
+https://courses.cs.washington.edu/courses/cse599f1/17wi/clp/index.html
+
+
+?- use_module(library(clpfd)).
+true.
+
+
+
+
+i.e.
+
+puzzle([S,E,N,D] + [M,O,R,E] = [M,O,N,E,Y]) :-
+        Vars = [S,E,N,D,M,O,R,Y],
+        Vars ins 0..9,
+        all_different(Vars),
+                  S*1000 + E*100 + N*10 + D +
+                  M*1000 + O*100 + R*10 + E #=
+        M*10000 + O*1000 + N*100 + E*10 + Y,
+        M #\= 0, S #\= 0.
+
+/* Sample queries for puzzle.
+
+This query won't solve for all the variables:
+?- puzzle(As+Bs=Cs). 
+
+Different version that uses individual variables:
+?- puzzle([S,E,N,D] + [M,O,R,E] = [M,O,N,E,Y]).
+
+?- puzzle(As+Bs=Cs), label(As).
+
+Or we can try just labelling one variable:
+?- puzzle([S,E,N,D] + [M,O,R,E] = [M,O,N,E,Y]), label([N]).
+
+?- puzzle([S,E,N,D] + [M,O,R,E] = [M,O,N,E,Y]), label([E]).
+
+?- puzzle([S,E,N,D] + [M,O,R,E] = [M,O,N,E,Y]), label([Y]).
+
+
+In nearly all cases this gives a unique solution.
+*/
+
+
+
+
+
+
+
+
+
+
+
