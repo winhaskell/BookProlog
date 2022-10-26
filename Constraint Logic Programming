@@ -1,6 +1,7 @@
 Constraint Logic Programming
 
 https://courses.cs.washington.edu/courses/cse599f1/17wi/clp/index.html
+https://www.metalevel.at/prolog/clpz
 
 
 ?- use_module(library(clpfd)).
