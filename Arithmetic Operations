@@ -7,6 +7,69 @@ https://www.lix.polytechnique.fr/~liberti/public/computing/prog/prolog/prolog-tu
 
 
 
+i.e.
+
+?- X is [a].
+X = 97.
+
+?- X is [a] + [b].
+X = 195.
+
+?- X is sqrt(234).
+X = 15.297058540778355.
+
+?- X is sqrt(101).
+X = 10.04987562112089.
+
+?- X is sqrt(166).
+X = 12.884098726725126.
+
+?- X is sqrt(169).
+X = 13.0.
+
+?- X is sqrt(9999).
+X = 99.99499987499375.
+
+?- X is sqrt(99996).
+X = 316.22144139827077.
+
+?- 3 is 7 mod 4.
+true.
+
+?- G is 7 mod 4.
+G = 3.
+
+?- display(X is 10 + 5 * 6 / 3).  
+is(_1350,+(10,/(*(5,6),3)))
+true.
+
+?- X is sqrt(9999). 
+X = 99.99499987499375.
+
+?-  G is 7 mod 2022. 
+G = 7.
+
+?-  G is 777 mod 2022. 
+G = 777.
+
+?-  G is 7778 mod 2022. 
+G = 1712.
+
+?-  G is 7778 mod 22. 
+G = 12.
+
+?-  G is 7777 mod 22. 
+G = 11.
+
+
+
+
+
+
+
+
+
+
 
 
 
