@@ -1,1 +1,99 @@
+?- istree(t(a,k(b,nil,nil),nil)).
+false.
+
+?- istree(t(a,t(b,nil,nil),nil)).
+true.
+
+?- istree(t(a,t(b,t(d,nil,nil),t(e,nil,nil)),t(c,nil,t(f,t(g,nil,nil),nil)))).
+true.
+
+
+
+?- istree(nil).
+true.
+
+?- istree(t(a,nil,nil)).
+true.
+
+
+?- cbal_tree(4,Tree).
+Tree = t(x, t(x, nil, nil), t(x, nil, t(x, nil, nil))) ;
+Tree = t(x, t(x, nil, nil), t(x, t(x, nil, nil), nil)) ;
+Tree = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, nil)) ;
+Tree = t(x, t(x, t(x, nil, nil), nil), t(x, nil, nil)).
+
+
+?- symmetric(t(a,nil,nil)).
+true.
+
+?- symmetric(t(a,t(a,nil,nil),t(a,nil,nil))).
+true.
+
+?- symmetric(t(a,t(a,nil,nil),t(i,nil,nil))).
+true.
+
+?- symmetric(t(a,t(a,5,nil),t(i,nil,nil))).
+false.
+
+?- symmetric(t(a,t(a,nil,nil),t(i,nil,nil))).
+true.
+
+
+?-  hbal_tree(3,T).
+T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil))) ;
+T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), nil)) ;
+T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, nil, t(x, nil, nil))) ;
+T = t(x, t(x, t(x, nil, nil), nil), t(x, t(x, nil, nil), t(x, nil, nil))) ;
+T = t(x, t(x, t(x, nil, nil), nil), t(x, t(x, nil, nil), nil)) ;
+T = t(x, t(x, t(x, nil, nil), nil), t(x, nil, t(x, nil, nil))) ;
+T = t(x, t(x, nil, t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil))) ;
+T = t(x, t(x, nil, t(x, nil, nil)), t(x, t(x, nil, nil), nil)) ;
+T = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, t(x, nil, nil))) ;
+T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, nil, nil)) ;
+T = t(x, t(x, t(x, nil, nil), nil), t(x, nil, nil)) ;
+T = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, nil)) ;
+T = t(x, t(x, nil, nil), t(x, t(x, nil, nil), t(x, nil, nil))) ;
+T = t(x, t(x, nil, nil), t(x, t(x, nil, nil), nil)) ;
+T = t(x, t(x, nil, nil), t(x, nil, t(x, nil, nil))).
+
+?- hbal_tree(2,T).
+T = t(x, t(x, nil, nil), t(x, nil, nil)) ;
+T = t(x, t(x, nil, nil), nil) ;
+T = t(x, nil, t(x, nil, nil)).
+
+
+
+?- hbal_tree_nodes(N,T).
+N = 0,
+T = nil.
+
+?- hbal_tree_nodes(15,T).
+T = t(x, t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil))),
+t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil)))) .
+
+?- hbal_tree_nodes(3,T).
+T = t(x, t(x, nil, nil), t(x, nil, nil)) .
+
+?- hbal_tree_nodes(4,T).
+T = t(x, t(x, t(x, nil, nil), nil), t(x, nil, nil)) .
+
+?- hbal_tree_nodes(5,T).
+T = t(x, t(x, t(x, nil, nil), nil), t(x, t(x, nil, nil), nil)) .
+
+?- hbal_tree_nodes(7,T).
+T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil))) .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
