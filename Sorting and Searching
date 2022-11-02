@@ -1,5 +1,21 @@
 Sorting and Searching
 
+/* sorted(Xs, Ys)  holds when  Ys  is the sorted variant of Xs */
+sorted(Xs, Ys) :- permutation(Xs, Ys), ordered(Ys).
+
+/* permutation(Xs, Zs)  holds true if Zs is a reordering of Xs */
+permutation([], []).
+permutation(Xs, [Z|Zs]) :- select(Z, Xs, Ys),  permutation(Ys, Zs).
+
+/* select(X, HasAnX, HasOneLessX)  "extracts" X from  HasAnX, giving HasOneLessX */
+select(X, [X|Rest], Rest).
+select(X, [Y|Ys], [Y|Zs]) :- select(X, Ys, Zs).
+
+/* ordered(Xs)  holds true if the elements in Xs are ordered by =< */
+ordered([]).
+ordered([X]).
+ordered([X,Y|Rest]) :- X =< Y,  ordered([Y|Rest]).
+
 
 
 insertsort.pl
@@ -12,6 +28,22 @@ insert([Y|Ys], X, [Y|Zs]):-Y < X, !, insert(Ys, X, Zs).
 insert(Ys, X, [X|Ys]).
 
 
+
+/* isort(Xs, Ys)  generates  Ys  so that it is the sorted variant of Xs */
+isort([], []).
+isort([X|Xs], Ys) :-  isort(Xs, Zs), insert(X, Zs, Ys).
+
+/* insert(X, L, LwithX)  inserts element X into list L, generating  LwithX */
+insert(X, [], [X]).
+insert(X, [Y|Ys], [X, Y | Ys]) :-  X =< Y.
+insert(X, [Y|Ys], [Y|Zs]) :-  X > Y,  insert(X, Ys, Zs).
+
+
+?- sorted([5,3,7,2,9,1], Ans).
+Ans = [1, 2, 3, 5, 7, 9] .
+
+?- isort([2,3,1,4,6,8,5],KKK).
+KKK = [1, 2, 3, 4, 5, 6, 8] .
 
 
 
@@ -41,6 +73,15 @@ length(Xs, L):-length_1(Xs, 0, L).
 
 length_1([], L, L).
 length_1([_|Xs], L0, L):-L1 = L0 + 1, length_1(Xs, L1, L).
+
+
+
+
+
+
+
+
+
 
 
 
