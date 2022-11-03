@@ -1,0 +1,111 @@
+list([]).
+list([X|Xs]) :- list(Xs).
+
+?- list([a,b,c]).
+yes
+
+?- list(abc).
+no
+
+
+
+
+
+member
+
+list_member(X,[X|Xs]).
+list_member(X,[Y|Ys]) :- list_member(X,Ys).
+
+?- list_member(X, [a,b,c]).
+X = a
+yes;
+
+X = b
+yes;
+
+X = c
+yes;
+
+
+?- list_member(a, [a,b,c]).
+yes;
+
+?- list_member(b, [a,b,c]).
+yes;
+
+?- list_member(c, [a,b,c]).
+yes;
+
+?- list_member(d, [a,b,c]).
+no
+
+
+
+
+
+
+
+listlength
+
+list_length([],0).
+list_length([X|Xs],A) :- list_length(Xs,B), A is B+1.
+
+?- list_length([],X).
+X = 0
+yes
+
+?- list_length([a],X).
+X = 1
+yes;
+
+
+?- list_length([a,b],X).
+X = 2
+yes;
+
+?- list_length([a,b,c,d,e,f],X).
+X = 6
+yes;
+
+
+?- list_length([a,b,c,d,e,f],6).
+yes;
+
+
+?- list_length([a,b,c,d,e,f],5).
+no
+
+
+
+
+
+?- permutation([a,b,c],X).
+X = [a, b, c] 
+X = [a, c, b] 
+X = [b, a, c] 
+X = [b, c, a] 
+X = [c, a, b] 
+X = [c, b, a] 
+false.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
