@@ -1,0 +1,68 @@
+The PROLOG Environment
+
+Here's a list of commands that will be useful in loading and running PROLOG programs. 
+The best way to use a Prolog environment is to save your database in a regular ASCII text file, 
+named with the suffix pro or pl (but note that Perl files also use the pl suffix). 
+Then you repeatedly load the file into the interpreter and run queries.
+
+A complete listing of the GPROLOG (Gnu Prolog) commands will be provided as a handout.
+
+^D              /* Control-D exits Prolog at the query prompt. */
+^C              /* Control-C interrupts any query and puts Prolog in interrupt mode:
+                | ?-
+                Prolog interruption (h for help) ? h
+                   a  abort        b  break
+                   c  continue     e  exit
+                   d  debug        t  trace
+                   h/? help
+
+                Prolog interruption (h for help) ? e    /* We exit PROLOG */
+
+                /* A PROLOG program can dynamically modify its database               */
+                /*  Or you can add a predicate from the query prompt.                 */
+asserta(P).     /* Adds P to the front of all matching P's                            */
+assertz(P).     /* Adds P to the end of all matching P's                              */
+retract(P).     /* Removes P from the database: -- e.g., (retract(male(joe)).
+
+                /* A PROLOG database can be loaded from a preexisting ascii file:     */
+
+consult('filename').  /* PROLOG reads the database into the interpreter reporting any     */ 
+                      /*  syntax errors. If you have errors, fix then and consult again.  */
+                      /*  NOTE. Some versions of PROLOG will create duplicate facts       */
+                      /*   and rules if you consult() the same file more than once.       */
+                      /*   Some versions, but not GPROLOG, have a reconsult() predicate   */
+
+reconsult('filename'). /* Reconsult the named file. Don't duplicate existing predicates. */
+
+['file1','file2'].     /* List notation can be used to load more than one file at once. */
+
+listing.              /* This predicate provides a listing of the database. */
+
+listing(P).           /* Provides a listing of just the predicate P.        */
+
+trace                 /* Turns on Prolog's trace utility. This dumps everything. */
+
+notrace.              /* Turns off the trace utility. */
+
+spy(P).               /* This just traces the predicate P */
+
+nospy(P).             /* Removes the spy point on P */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
