@@ -24,6 +24,98 @@ path(X, Y, [X|Path]) :-
     
     
     
+Graph is another data structure that is widely used in current algorithms. 
+In this lecture we will describe a representation of graphs in Prolog and 
+we will develop some programs for typical graph operations.
+
+%  a --- b --- e
+%   \         /
+%    \       /
+%     c --- d --- f
+%            \
+%             \
+%              g
+
+We could represent the above using the following facts in Prolog:
+
+path(a,b).
+path(b,e).
+path(a,c).
+path(c,d).
+path(e,d).
+path(d,f).
+path(d,g).
+
+Now all we need is to define a simple predicate that can calculate paths by composition 
+of existing paths. For example if X is connected to Z and Z is connected to Y then 
+there is a path between X and Y, which is Prolog is very similar to the sentence we just wrote:
+
+path(X,Y) :-path(X,Z), path(Z,Y).
+
+
+
+edge(a,b).
+edge(b,e).
+edge(a,c).
+edge(c,d).
+edge(e,d).
+edge(d,f).
+edge(d,g).
+edge(g,d).
+
+path(X, Y) :- path(X,Y,[]).
+
+path(X, Y, _) :- edge(X,Y).
+path(X, Y, V) :- \+ member(X, V), edge(X, Z), path(Z, Y, [X|V]).
+
+
+
+
+%  a -1- b -2- e
+%   \         /
+%   3        3
+%    \       /
+%     c -2- d -2- f
+%            \
+%            3
+%             \
+%              g
+%
+
+edge(a,b,1).
+edge(b,e,2).
+edge(a,c,3).
+edge(c,d,2).
+edge(e,d,3).
+edge(d,f,2).
+edge(d,g,3).
+
+
+
+findapath(X, Y, W, [X,Y], _) :- edge(X, Y, W).
+findapath(X, Y, W, [X|P], V) :- \+ member(X, V),
+                                 edge(X, Z, W1),
+                                 findapath(Z, Y, W2, P, [X|V]),
+                                 W is W1 + W2.
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
