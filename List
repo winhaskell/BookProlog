@@ -1,3 +1,30 @@
+A list is an ordered sequence of elements that can have any length. 
+Lists are a common data structure in computer programming.
+
+In Prolog, lists are represented as a tree consisting of structures that have no arguments, 
+an empty list, or two arguments: a head and a tail. The head is a used to store a particular term 
+in the list and the tail is recursively the rest of the list. 
+The end of a list is customarily represented as a tail that is set to an empty list.
+
+The data structure used to represent lists in Prolog has a functor (name) of ".". 
+Thus, a list with the single element a can be represented as: .(a, .()) and a list with 
+elements a, b and c can be represented as: .(a, .(b, .(c, .()))). 
+
+Prolog also supports a more concise syntax for writing lists. List notation consists of elements of 
+the list separated by commas, and the whole list enclosed in square brackets. 
+Thus, a list with the single element a can be represented as: [a] and a list with elements 
+a, b and c can be represented as: [a, b, c]. An empty list can be represented by a opening square 
+bracket followed by a closing square bracket: [].
+
+It is common for Prolog programs to manipulate lists by splitting them into a head and a tail. 
+The | character has a special meaning in Prolog syntax to separate the head and tail of a list. 
+Thus the Prolog syntax [X|Y] represents a list with head X and tail Y.
+
+
+
+
+
+
 list([]).
 list([X|Xs]) :- list(Xs).
 
@@ -89,6 +116,37 @@ X = [c, b, a]
 false.
 
 
+
+
+
+?- permutation([1,2], [X,Y]).
+X = 1,
+Y = 2 
+X = 2,
+Y = 1 
+ 
+
+?- select(b, [a,b,c,b], 2, X).
+X = [a, 2, c, b] 
+X = [a, b, c, 2] 
+
+
+
+
+
+
+?- prefix(X, [a,b,c,d,e,f]).
+X = [] 
+X = [a] 
+X = [a, b] 
+X = [a, b, c] 
+X = [a, b, c, d] 
+X = [a, b, c, d, e] 
+X = [a, b, c, d, e, f] 
+
+
+?- prefix([X,b],[a,b,c]).
+X = a.
 
 
 
