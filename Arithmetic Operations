@@ -5,8 +5,6 @@ https://www.l3s.de/~gaugaz/ki/prolog/lpn-book/node38.html#lecture5
 https://www.lix.polytechnique.fr/~liberti/public/computing/prog/prolog/prolog-tutorial.html
 
 
-
-
 i.e.
 
 ?- X is [a].
@@ -61,6 +59,71 @@ G = 12.
 ?-  G is 7777 mod 22. 
 G = 11.
 
+
+?- G is sin(pi/2).
+G = 1.0.
+
+?- G is sin(pi).
+G = 1.2246467991473532e-16.
+
+?- G is sin(pi/3).
+G = 0.8660254037844386.
+
+?- G is sin(pi/4*3).
+G = 0.7071067811865476.
+
+?- G is sin(pi/4*2).
+G = 1.0.
+
+?- G is sin(-pi/4*2).
+G = -1.0.
+
+?- G is sin(-pi/4*3).
+G = -0.7071067811865476.
+
+
+?- G is cos(-pi/2).
+G = 6.123233995736766e-17.
+
+?- G is cos(-pi).
+G = -1.0.
+
+?- G is cos(pi).
+G = -1.0.
+
+?- G is cos(pi/2).
+G = 6.123233995736766e-17.
+
+?- G is cos(pi/2*3).
+G = -1.8369701987210297e-16.
+
+?- G is cos(pi/4*3).
+G = -0.7071067811865475.
+
+?- G is cos(pi/4*8).
+G = 1.0.
+
+
+
+?- X is 10 + 5 * 6 / 3.  
+X = 20.
+
+?- X is 10 + 5.  
+X = 15.
+
+?- X is 10 - 25.  
+X = -15.
+
+?- X is 10 / 5.  
+X = 2.
+
+?- X is 10 / 15.  
+X = 0.6666666666666666.
+
+
+?- display(X is 10 + 5 * 6 / 3).  
+is(_10416,+(10,/(*(5,6),3)))
+true.
 
 
 
