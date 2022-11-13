@@ -30,16 +30,86 @@ K = 1.4142135623730951.
 ?-  sqrt(2,X).
 X = 1.4142135623730951.
 
+
+?- K is exp(1).
+K = 2.718281828459045.
+
+?- K is exp(0).
+K = 1.0.
+
 ?- K is exp(2).
 K = 7.38905609893065.
 
 ?- K is exp(100).
 K = 2.6881171418161356e+43.
 
-?- K is exp(1).
-K = 2.718281828459045.
 
 
+?- H is truncate(1.5).
+H = 1.
+
+?- H is truncate(-1.5).
+H = -1.
+
+?- H is truncate(-9.5).
+H = -9.
+
+?- H is truncate(-9.6).
+H = -9.
+
+?- H is truncate(-9.9).
+H = -9.
+
+?- H is truncate(-9.0001).
+H = -9.
+
+?- H is round(1.6).
+H = 2.
+
+?- H is round(1.56).
+H = 2.
+
+?- H is round(1.416).
+H = 1.
+
+?- H is round(1.01916).
+H = 1.
+
+
+https://courses.cs.washington.edu/courses/cse505/94au/logic/prolog.html
+
+Negation
+
+?- X=4, not(X=5).
+X = 4.
+
+?- not(3=6).
+true.
+
+?- not(6=6).
+false.
+
+
+
+?- X is 3+4, Y is X*X*X.
+X = 7,
+Y = 343.
+
+?- X is 8, Y is X*X*X.
+X = 8,
+Y = 512.
+
+?- X is 11, Y is X*X*X.
+X = 11,
+Y = 1331.
+
+?- X is 12, Y is X*X*X.
+X = 12,
+Y = 1728.
+
+?- X is 2022, Y is X*X*X.
+X = 2022,
+Y = 8266914648.
 
 
 
