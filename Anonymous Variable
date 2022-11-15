@@ -1,0 +1,12 @@
+Anonymous Variable
+
+Using The Anonymous Variable
+We can get our program to answer vague questions than the ones we have been putting.
+
+The underscore in Prolog is called the anonymous variable. 
+This query should return all of supervises in the system. Press the semicolon after each answer.
+
+https://www-users.york.ac.uk/~sjh1/courses/L334css/complete/complete2/node17.html
+
+
+
