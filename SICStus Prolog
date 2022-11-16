@@ -1,0 +1,32 @@
+SICStus Prolog
+
+https://sicstus.sics.se/documentation.html
+
+Documentation and Manuals
+Documentation for SICStus Prolog 4.7.1
+
+Feature Highlights
+
+SICStus Prolog provides the means to integrate a very powerful Prolog engine in advanced, 
+portable computing applications. It is the ideal choice for applications that require reasoning, 
+search or pattern matching capabilities (e.g. intelligent web, rule engine, natural or formal language, 
+and expert system style applications).
+
+SICStus Prolog provides tools for delivering stand-alone applications as well as modules that 
+can be linked with code written in other languages to create reliable solutions with Prolog embedded.
+
+The latest version is 4.7.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
