@@ -1,0 +1,52 @@
+SWI-Prolog
+
+https://www.swi-prolog.org/
+
+Overview
+
+SWI-Prolog is a versatile implementation of the Prolog language. Although SWI-Prolog gained 
+its popularity primarily in education, its development is mostly driven by the needs for 
+application development. This is facilitated by a rich interface to other IT components by 
+supporting many document types and (network) protocols as well as a comprehensive low-level 
+interface to C that is the basis for high-level interfaces to C++, Java (bundled), C#, Python,
+Rust, etc. (externally available). Data type extensions such as dicts and strings as well as
+full support for Unicode and unbounded integers simplify smooth exchange of data with other components.
+
+SWI-Prolog aims at scalability. Its robust support for multi-threading exploits multi-core 
+hardware efficiently and simplifies embedding in concurrent applications. Its Just In Time 
+Indexing (JITI) provides transparent and efficient support for predicates with millions of clauses.
+
+SWI-Prolog unifies many extensions of the core language that have been developed in the Prolog 
+community such as tabling, constraints, global variables, destructive assignment, delimited 
+continuations and interactors.
+
+SWI-Prolog offers a variety of development tools, most of which may be combined at will. 
+The native system provides an editor written in Prolog that is a close clone of Emacs. 
+It provides semantic highlighting based on real time analysis of the code by the Prolog system itself. 
+Complementary tools include a graphical debugger, profiler, coverage analysis and cross-referencer. 
+Alternatively, there is a mode for GNU-Emacs and, Eclipse plugin called PDT and a VSC plugin, 
+each of which may be combined with the native graphical tools. Finally, a computational notebook 
+and web based IDE is provided by SWISH. SWISH is a versatile tool that can be configured and
+extended to suit many different scenarios.
+
+SWI-Prolog provides an add-on distribution and installation mechanism called packs. 
+A pack is a directory with minimal organizational conventions and a control file that 
+describes the origin, version, dependencies and automatic upgrade support. Packs
+can be installed from an archive, GIT repository or URL using pack_install/1. 
+Packs are used to share code in the community. The pack system has grown a couple 
+of eco systems for dealing with types, coroutining, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
