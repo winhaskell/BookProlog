@@ -3,7 +3,6 @@ Debugging and Tracing Programs
 Ref
 
 https://www.swi-prolog.org/pldoc/man?section=debugger
-
 https://www.metalevel.at/prolog/debugging
 
 https://pages.cs.wisc.edu/~fischer/cs538.s06/lectures/Lecture30.pdf
@@ -17,8 +16,60 @@ Ph.D., Cornell University, 1974
 supervised by John H. Williams.
 
 https://www.cs.bham.ac.uk/~pjh/prolog_module/using_swi/debugging_swi.html
-
 https://deepai.org/publication/the-prolog-debugger-and-declarative-programming-examples
+https://www.cs.toronto.edu/~bonner/courses/2016f/csc324/handouts/usingSWIprolog.txt
+
+
+Sample
+
+[trace]  ?- supervises(Who, green).
+   Call: (10) supervises(_96734, green) ? creep
+   Call: (11) manager(_96734) ? creep
+   Exit: (11) manager(brown) ? creep
+   Call: (11) adminWorker(green) ? creep
+   Fail: (11) adminWorker(green) ? creep
+   Redo: (11) manager(_96734) ? creep
+   Exit: (11) manager(grey) ? creep
+   Call: (11) adminWorker(green) ? creep
+   Fail: (11) adminWorker(green) ? creep
+   Redo: (10) supervises(_96734, green) ? creep
+   Call: (11) adminWorker(_96734) ? creep
+   Exit: (11) adminWorker(black) ? creep
+   Call: (11) officeJunior(green) ? creep
+   Exit: (11) officeJunior(green) ? creep
+   Exit: (10) supervises(black, green) ? creep
+Who = black ;
+   Redo: (11) adminWorker(_96734) ? creep
+   Exit: (11) adminWorker(red) ? creep
+   Call: (11) officeJunior(green) ? creep
+   Exit: (11) officeJunior(green) ? creep
+   Exit: (10) supervises(red, green) ? creep
+Who = red ;
+   Redo: (10) supervises(_96734, green) ? creep
+   Call: (11) manager(_96734) ? creep
+   Exit: (11) manager(brown) ? creep
+   Call: (11) officeJunior(green) ? creep
+   Exit: (11) officeJunior(green) ? creep
+   Exit: (10) supervises(brown, green) ? creep
+Who = brown ;
+   Redo: (11) manager(_96734) ? creep
+   Exit: (11) manager(grey) ? creep
+   Call: (11) officeJunior(green) ? creep
+   Exit: (11) officeJunior(green) ? creep
+   Exit: (10) supervises(grey, green) ? creep
+Who = grey.
+
+
+
+
+[debug]  ?- supervises(Who, green).
+Who = black ;
+Who = red ;
+Who = brown ;
+Who = grey.
+
+
+
 
 
 
