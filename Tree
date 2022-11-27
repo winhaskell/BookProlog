@@ -18,6 +18,21 @@ Sample query:
 
 
 
+% tree(Tree)
+% "Tree" is a binary tree.
+
+tree(void).
+tree(tree(_,Left,Right)) :-  tree(Left),
+                             tree(Right).
+
+
+
+% tree_member(Element,Tree)
+% "Element" is an element of the binary tree "Tree".
+
+tree_member(X,tree(X,_,_)).
+tree_member(X,tree(_,Left,_)) :- tree_member(X,Left).
+tree_member(X,tree(_,_,Right)) :- tree_member(X,Right).
 
 
 
@@ -33,18 +48,32 @@ true.
 
 
 
-?- istree(nil).
-true.
+?- cbal_tree(0,Tree).
+Tree = nil.
 
-?- istree(t(a,nil,nil)).
-true.
+?- cbal_tree(1,Tree).
+Tree = t(x, nil, nil).
 
+?- cbal_tree(2,Tree).
+Tree = t(x, nil, t(x, nil, nil)) ;
+Tree = t(x, t(x, nil, nil), nil).
+
+?- cbal_tree(3,Tree).
+Tree = t(x, t(x, nil, nil), t(x, nil, nil)).
 
 ?- cbal_tree(4,Tree).
 Tree = t(x, t(x, nil, nil), t(x, nil, t(x, nil, nil))) ;
 Tree = t(x, t(x, nil, nil), t(x, t(x, nil, nil), nil)) ;
 Tree = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, nil)) ;
 Tree = t(x, t(x, t(x, nil, nil), nil), t(x, nil, nil)).
+
+?- cbal_tree(4,Tree).
+Tree = t(x, t(x, nil, nil), t(x, nil, t(x, nil, nil))) ;
+Tree = t(x, t(x, nil, nil), t(x, t(x, nil, nil), nil)) ;
+Tree = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, nil)) ;
+Tree = t(x, t(x, t(x, nil, nil), nil), t(x, nil, nil)).
+
+
 
 
 ?- symmetric(t(a,nil,nil)).
@@ -56,34 +85,13 @@ true.
 ?- symmetric(t(a,t(a,nil,nil),t(i,nil,nil))).
 true.
 
-?- symmetric(t(a,t(a,5,nil),t(i,nil,nil))).
-false.
-
-?- symmetric(t(a,t(a,nil,nil),t(i,nil,nil))).
+?- symmetric( t(x, t(x, nil, nil), t(x, nil, nil))).
 true.
 
+?- symmetric(t(x, t(x, nil, nil), t(x, nil, t(x, nil, nil)))).
+false.
 
-?-  hbal_tree(3,T).
-T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil))) ;
-T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), nil)) ;
-T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, nil, t(x, nil, nil))) ;
-T = t(x, t(x, t(x, nil, nil), nil), t(x, t(x, nil, nil), t(x, nil, nil))) ;
-T = t(x, t(x, t(x, nil, nil), nil), t(x, t(x, nil, nil), nil)) ;
-T = t(x, t(x, t(x, nil, nil), nil), t(x, nil, t(x, nil, nil))) ;
-T = t(x, t(x, nil, t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, nil))) ;
-T = t(x, t(x, nil, t(x, nil, nil)), t(x, t(x, nil, nil), nil)) ;
-T = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, t(x, nil, nil))) ;
-T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, nil, nil)) ;
-T = t(x, t(x, t(x, nil, nil), nil), t(x, nil, nil)) ;
-T = t(x, t(x, nil, t(x, nil, nil)), t(x, nil, nil)) ;
-T = t(x, t(x, nil, nil), t(x, t(x, nil, nil), t(x, nil, nil))) ;
-T = t(x, t(x, nil, nil), t(x, t(x, nil, nil), nil)) ;
-T = t(x, t(x, nil, nil), t(x, nil, t(x, nil, nil))).
 
-?- hbal_tree(2,T).
-T = t(x, t(x, nil, nil), t(x, nil, nil)) ;
-T = t(x, t(x, nil, nil), nil) ;
-T = t(x, nil, t(x, nil, nil)).
 
 
 
@@ -112,25 +120,30 @@ T = t(x, t(x, t(x, nil, nil), t(x, nil, nil)), t(x, t(x, nil, nil), t(x, nil, ni
 
 
 
-% tree(Tree)
-% "Tree" is a binary tree.
-
-tree(void).
-tree(tree(_,Left,Right)) :-  tree(Left),
-                             tree(Right).
-
-
-% tree_member(Element,Tree)
-% "Element" is an element of the binary tree "Tree".
-
-tree_member(X,tree(X,_,_)).
-tree_member(X,tree(_,Left,_)) :- tree_member(X,Left).
-tree_member(X,tree(_,_,Right)) :- tree_member(X,Right).
-
-
-
-
    
+?- sumtree(tree(5,tree(2,tree(1,void,void),tree(4,tree(3,void,void),void)),tree(6,void,void)), S).
+S = 21.
+
+
+
+
+btInsert(E, nil, bt(E, nil, nil)).
+btInsert(E, bt(E, L, R), bt(E, L, R)).
+btInsert(E, bt(E1, L, R), bt(E1, L1, R)) :- btInsert(E, L, L1), E < E1.
+btInsert(E, bt(E1, L, R), bt(E1, L, R1)) :- btInsert(E, R, R1), E > E1.
+
+?- btInsert(75, bt(_, nil, nil), T).
+T = bt(75, nil, nil) .
+
+?- btInsert(65, bt(75, nil, nil), T).
+T = bt(75, bt(65, nil, nil), nil) .
+
+?- btInsert(33,  bt(75, bt(65, nil, nil), nil), T).
+T = bt(75, bt(65, bt(33, nil, nil), nil), nil) .
+
+
+
+
 
 
 
