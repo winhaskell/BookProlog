@@ -70,6 +70,16 @@ path(X, Y, V) :- \+ member(X, V), edge(X, Z), path(Z, Y, [X|V]).
 
 
 
+% "noloop" if there is a path from X to Y using the listed visited nodes in the path.
+noloop(X, Y, [X,Y]) :- edge(X, Y).
+noloop(X, Y, [X|Path]) :-
+    edge(X, Z),
+    \+ member(X, Path),
+    noloop(Z, Y, Path).
+
+
+
+
 
 %  a -1- b -2- e
 %   \         /
