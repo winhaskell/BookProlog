@@ -175,12 +175,68 @@ test_quick_sort(S) :- quick_sort([ 3, 18,  6,  5,  2,  8, 15, 13, 14,  0, 12,  7
 
 
 
+isort([], []).
+isort([X|Xs], Ys) :-  isort(Xs, Zs), insert(X, Zs, Ys).
+insert(X, [], [X]).
+insert(X, [Y|Ys], [X, Y | Ys]) :-  X =< Y.
+insert(X, [Y|Ys], [Y|Zs]) :-  X > Y,  insert(X, Ys, Zs).
 
 
 
 
 
 
+
+bubblesort(Ls0, Ls) :-
+    (	append(Lefts, [A,B|Rights], Ls0), A @> B ->
+	append(Lefts, [B,A|Rights], Ls1),
+	bubblesort(Ls1, Ls)
+    ;	Ls = Ls0
+    ).
+
+
+ 
+ 
+ 
+
+partition(_,[],[],[]).
+partition(P,[H|T],[H|L],R) :- H =< P, partition(P,T,L,R).
+partition(P,[H|T],L,[H|R]) :- H > P, partition(P,T,L,R).
+% quicksort(+List,-DiffList)
+quicksort([],A-A).
+quicksort([P|T],L1-R2) :-
+ partition(P,T,L,R),
+ quicksort(L,L1-[P|R1]), quicksort(R,R1-R2).
+
+
+
+
+
+
+
+
+merge(List, List, []).
+merge(List, [], List).
+merge([MinList1|RestMerged], [MinList1|RestList1], [MinList2|RestList2]) :-
+  MinList1 =< MinList2,
+
+merge(RestMerged,RestList1,[MinList2|RestList2]).
+merge([MinList2|RestMerged], [MinList1|RestList1], [MinList2|RestList2]) :-
+  MinList2 =< MinList1,
+  merge(RestMerged,[MinList1|RestList1],RestList2).
+
+mergeSort([], []).
+mergeSort([A], [A|[]]).
+mergeSort(Sorted, List) :-
+  length(List, N),
+  FirstLength is //(N, 2),
+  SecondLength is N - FirstLength,
+  length(FirstUnsorted, FirstLength),
+  length(SecondUnsorted, SecondLength),
+  append(FirstUnsorted, SecondUnsorted, List),
+  mergeSort(FirstSorted, FirstUnsorted),
+  mergeSort(SecondSorted, SecondUnsorted),
+merge(Sorted, FirstSorted, SecondSorted).
 
 
 
