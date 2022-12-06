@@ -138,15 +138,52 @@ P = [1, 3, 2, 4, 3, 2, 4, 3, 2|...] ;
 
 
 
+findall(X, Goal, Xlist) :- call( Goal),
+                           assertz(queue(X)),
+                           fail.
+
+findall(_, _, XList) :- assertz(queue(bottom)),
+                        collect(Xlist).
+
+collect(L) :- retract(queue(bottom)), !, L = [].
+collect(L) :- retract(queue(X)), !, L = [X|Rest], collect(Rest).
+
+
+?- dynamic(solution/2).
+true.
+
+
+findminpath(X, Y, W, P) :- \+ solution(_, _),
+                           findapath(X, Y, W1, P1, []),
+                           assertz(solution(W1, P1)),
+                           !,
+                           findminpath(X,Y,W,P).
+
+findminpath(X, Y, _, _) :- findapath(X, Y, W1, P1, []),
+                           solution(W2, P2),
+                           W1 < W2,
+                           retract(solution(W2, P2)),
+                           asserta(solution(W1, P1)),
+                           fail.
+
+findminpath(_, _, W, P) :- solution(W,P), retract(solution(W,P)).
+
+
+?- findminpath(a,g,W,P).
+
+P = [a,c,d,g]
+W = 8
+
+
+
+
+
+
+
 
 
 
 
     
-
-
-
-
-
 
 
