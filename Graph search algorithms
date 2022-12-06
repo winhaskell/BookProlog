@@ -1,0 +1,115 @@
+Graph search algorithms
+
+Graph search algorithms explore a graph either for general discovery or explicit search. 
+These algorithms carve paths through the graph, but there is no expectation that those 
+paths are computationally optimal. We will cover Breadth First Search and Depth First Search 
+because they are fundamental for traversing a graph and are often a required first step 
+for many other types of analysis.
+
+DFS
+
+node(a). node(b).
+node(c). node(d).
+node(e). node(f).
+node(g). node(h).
+node(k). node(m).
+node(p). node(s).
+edge(a, b). edge(a, c). edge(a, g).
+edge(b, a). edge(b, c).
+edge(c, e). edge(c, d).
+edge(d, f).
+edge(e, g). edge(e, f). edge(e, h).
+edge(f, k).
+edge(g, c). edge(g, e).
+edge(m, d).
+edge(p, b). edge(p, d).
+
+node(a, [b, c, g]). 
+node(b, [a, c]).
+node(c, [e, d]). 
+node(d, [f]).
+node(e, [g, f, h]). 
+node(f, [k]).
+node(g, [c, e]). 
+node(h, []).
+node(k, []). 
+node(m, [d]).
+node(p, [b, d]). 
+node(s, []).
+
+dfs(From, To, _, [edge(From, To)]):-
+  edge(From, To).
+dfs(From, To, VisitedNodes, [(From, X)|TailPath]):-
+  edge(From, X), 
+  not(member(X, VisitedNodes)),
+  dfs(X, To, [From|VisitedNodes], TailPath).
+  
+  
+  
+  
+  
+BFS
+
+route(bus, 1, [st1, st2, st3, st4, st5, st6]).
+route(bus, 2, [st1, st2, st3, st4, st7,st8,st9,st10]).
+route(bus, 3, [st3, st4, st7,st10,st11]).
+route(trolleybus, 1, [st1, st3, st6, st7, st8, st12]).
+route(trolleybus, 2, [st5, st7, st9, st10]).
+route(tramway, 1, [st1, st3, st5, st7, st11]).
+route(tramway, 2, [st6, st7, st9]).
+route(tramway, 3, [st1, st5, st12]).
+  
+move((_, _, StA), (Type, Number, StB)):-
+    route(Type, Number, Stations),
+    (   
+      divide_list(Stations, [_, [StA, StB], _]);
+      divide_list(Stations, [_, [StB, StA], _])
+    ).
+    
+next(A, B, Used):-
+    move(A, B), B = (_, _, Name),
+    \+ member((_, _, Name), Used).
+        
+ path_with_station(Path, Stations, PathWithStation):-
+  member(Station, Stations),
+  PathWithStation = [Station|Path].
+  
+  
+bfs([HeadPath|_], ToStationName, _, Path):-
+    HeadPath = [(_, _, ToStationName)|_], !,
+    Path = HeadPath.
+bfs([HeadPath|TailPath], ToStationName, Used, Path):-
+    HeadPath = [HeadStation|_],
+    findall(NextStation, next(HeadStation, NextStation, Used), AllNextStations),
+    findall(NextPaths, path_with_station(HeadPath, AllNextStations, NextPaths), AllNextPaths),
+    append(TailPath, AllNextPaths, NextBuffer),
+    append(Used, AllNextStations, NextUsed),
+    bfs(NextBuffer, ToStationName, NextUsed, Path).
+  
+path(From, To, Path):-
+    bfs([[(no, no, From)]], To, [], ReversedPath),
+    reverse(ReversedPath, Path).
+   
+/* <examples>
+?- move((_, _, st1), X).
+?- bfs([[(bus, 1, st1)]], st1, [], Path).
+?- path(st1, st9, Path).
+?- path(st1, st99, Path).
+*/
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
