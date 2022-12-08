@@ -50,8 +50,35 @@ dfs(From, To, VisitedNodes, [(From, X)|TailPath]):-
   
 BFS
 
-?
-  
+connected(a,b,1).
+connected(a,c,1).
+connected(b,d,1).
+connected(b,e,1).
+connected(c,f,1).
+connected(c,g,1).
+connected(d,h,1).
+connected(e,h,1).
+connected(f,h,1).
+connected(g,h,1).
+
+connected2(X,Y,D) :- connected(X,Y,D).
+connected2(X,Y,D) :- connected(Y,X,D).
+
+next_node(Current, Next, Path) :-
+    connected2(Current, Next, _),
+    not(member(Next, Path)).
+
+breadth_first(Goal, Goal, _,[Goal]).
+breadth_first(Start, Goal, Visited, Path) :-
+    findall(X, (connected2(X,Start,_),not(member(X,Visited))),
+            [T|Extend]),
+    write(Visited), nl,
+    append(Visited, [T|Extend], Visited2),
+    append(Path, [T|Extend], [Next|Path2]),
+    breadth_first(Next, Goal, Visited2, Path2).
+
+
+
   
 
 
