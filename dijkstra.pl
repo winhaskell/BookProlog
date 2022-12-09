@@ -45,9 +45,18 @@ go(From, To) :-
   
   
   
-  
-  
-  
+(f,e)
+Shortest path is [f,e] with distance 0+9 = 9
+
+
+(a,e)
+Shortest path is [a,c,f,e] with distance 0+9+2+9 = 20
+
+
+
+
+
+
   
   
   
