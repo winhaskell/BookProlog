@@ -1,0 +1,6 @@
+
+
+Algorithm = Logic + Control
+ Logic = Clauses
+ Control = Bottom-up fixpoint iteration to build the model
+ Control = Matching of queries to the model
