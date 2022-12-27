@@ -1,6 +1,28 @@
+Syntax:
+Predicates Clauses, Rules, Facts Terms, Variables, Constants, Structures
+
+
+Semantics:
+How do we know what a goal / program means?  
+Translation of Prolog to logical formulas
+
+How do we know what a logical formula means?
+Models of logical formulas (Declarative semantics)
+Proofs of logical formulas (Operational semantics)
+
 
 
 Algorithm = Logic + Control
- Logic = Clauses
- Control = Bottom-up fixpoint iteration to build the model
- Control = Matching of queries to the model
+Logic = Clauses
+Control = Bottom-up fixpoint iteration to build the model
+Control = Matching of queries to the model
+
+
+
+
+
+
+
+
+
+
