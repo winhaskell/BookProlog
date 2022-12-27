@@ -1,0 +1,17 @@
+https://www.cs.uleth.ca/~gaur/post/prolog-cut-negation/
+
+! pronounced “cut” is a special goal in prolog which always succeeds. 
+The purpose of cut, loosely speaking, is to freeze some of the choices made by the backtracking sytem so far. 
+
+Cuts can therefore be used to increase the efficiency (time) of prolog programs. 
+First we will see how the backtracking is affected by the use of cuts. 
+Then we will give an example use of cuts to speed up prolog programs. 
+We will use cuts to define a negation operator (neg) in prolog. 
+Finally, we rewrite the 8-queens program using the neg operator.
+
+
+
+
+
+
+
