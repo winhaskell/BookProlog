@@ -1,0 +1,32 @@
+Prolog & Artificial Intelligence Applications
+
+The features described above make Prolog suitable for developing applications that solve AI Problems. 
+Such an area is that of Decision Support Systems. Rules that support decisions can be expressed as Prolog rules, 
+declaratively in pure logic, making development and maintenance of these systems mush easier.
+
+Except from financial decisions, medical decisions can be supported by similar systems written in Prolog. 
+Decision support systems can also take the form of a computer based advisor. Another major AI area that 
+Prolog contributes is that of Natural Language Processing. Pattern matching capabilities and the declarative 
+nature of grammar definitions, make Prolog a handy and powerful tool for processing natural language.
+
+Among the various AI applications using Prolog, many Knowledge-based Systems can be found. This is because, 
+in most of the cases, knowledge in such systems is expressed in the form of rules. These rules can be easily 
+expressed in Prolog syntax. After that, by using unification and Prolog search mechanism, inference can be done.
+
+It is a fact that every AI problem that can be represented using graphs can be handled by Prolog search and
+backtracking mechanism. Having such an advantage, various Prolog systems have been developed to solve 
+Graph Theory Problems. Another AI area where Prolog is used is that of Scheduling and Planning. 
+The “Generate & Test” technique and the pattern matching mechanism of Prolog, make the test of 
+candidate generated solutions a much simpler task. The unification and pattern matching mechanism 
+of Prolog can also be found useful for AI problems of Computer Vision.
+
+
+
+
+
+
+
+
+
+
+
