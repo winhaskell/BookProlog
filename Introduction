@@ -1,0 +1,31 @@
+Introduction
+
+Prolog, which stands for PROgramming in LOGic, is the most widely available language in the logic programming paradigm. 
+Logic and therefore Prolog is based the mathematical notions of relations and logical inference. Prolog is a declarative language 
+meaning that rather than describing how to compute a solution, a program consists of a data base of facts and logical 
+relationships (rules) which describe the relationships which hold for the given application. Rather then running a program 
+to obtain a solution, the user asks a question. When asked a question, the run time system searches through the data base 
+of facts and rules to determine (by logical deduction) the answer.
+
+Among the features of Prolog are `logical variables' meaning that they behave like mathematical variables, a powerful 
+pattern-matching facility (unification), a backtracking strategy to search for proofs, uniform data structures, and 
+input and output are interchangeable.
+
+Often there will be more than one way to deduce the answer or there will be more than one solution, in such cases the run time system 
+may be asked find other solutions. backtracking to generate alternative solutions. Prolog is a weakly typed language with dynamic 
+type checking and static scope rules.
+
+Prolog is used in artificial intelligence applications such as natural language interfaces, automated reasoning systems and expert systems. 
+Expert systems usually consist of a data base of facts and rules and an inference engine, the run time system of Prolog provides much 
+of the services of an inference engine.
+
+
+
+
+
+
+
+
+
+
+
