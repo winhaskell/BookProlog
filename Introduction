@@ -7,7 +7,7 @@ relationships (rules) which describe the relationships which hold for the given 
 to obtain a solution, the user asks a question. When asked a question, the run time system searches through the data base 
 of facts and rules to determine (by logical deduction) the answer.
 
-Among the features of Prolog are `logical variables' meaning that they behave like mathematical variables, a powerful 
+Among the features of Prolog are 'logical variables' meaning that they behave like mathematical variables, a powerful 
 pattern-matching facility (unification), a backtracking strategy to search for proofs, uniform data structures, and 
 input and output are interchangeable.
 
