@@ -1,0 +1,34 @@
+Structure of a Prolog Program
+
+Programs in most programming languages consist of functions of things like functions, variables, and modules. 
+
+Prolog is a bit different, and its program consist of three main things:
+
+Facts about objects and their relationships. Prolog objects are not objects in the sense of object-oriented programming,
+but objects in the sense of logic. An object could be any value, e.g. a number, a string, a list, etc. 
+Relationships between objects are treated as logical predicates as in first-order quantified logic.
+
+Rules about objects and their relationships. For example, you might have the rule “if X and Y have the same parents, then they’re siblings”.
+
+Questions that can be asked about objects and their relationships. These are similar to queries in a database system.
+
+Facts and rules together form what is often called a knowledge base. Often, writing a Prolog program consists of 
+creating a (sometimes very sophisticated!) knowledge base, plus queries on that knowledge base.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
