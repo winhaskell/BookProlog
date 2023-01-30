@@ -1,0 +1,35 @@
+Efficiency of Prolog
+
+The key point about Prolog is that the PURE things are fast and the
+imperative things are slow, which is the direct opposite of languages
+like Pascal. (Richard O'Keefe, Prolog Digest, 1987)
+
+Good performance is often important. However, do not get carried away with micro-optimizations. 
+For example, leaving an occasional choice point is often completely acceptable in user programs. 
+Likewise, reporting redundant solutions is not inherently bad. For beginners, it is easy to get 
+dragged into procedural aspects too early. Do not fall into this trap! Instead, focus on those aspects 
+of your programs where your attention is most warranted. Let the machine and Prolog system take care of 
+the more trivial aspects. Not everything needs to be implemented with utmost efficiency.
+
+Most importantly: Never sacrifice correctness for performance! When writing Prolog programs, the most elegant 
+solutions are often also among the most efficient.
+
+Therefore, when writing Prolog code, always aim for elegant and general solutions. If they are not efficient 
+enough even though you have followed the advice on this page, it may be a sign that you need a new language 
+construct from which many other Prolog programmers could potentially benefit too. In such cases, ask the Prolog 
+community for more information! For example, the newsgroup comp.lang.prolog is a good place for such discussions.
+
+https://www.metalevel.at/prolog/efficiency
+
+
+
+
+
+
+
+
+
+
+
+
+
