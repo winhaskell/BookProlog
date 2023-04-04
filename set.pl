@@ -2,8 +2,7 @@
 
 empty_set([]).
 
-member_set(E,S) :-
-	member(E,S).
+member_set(E,S) :- member(E,S).
 
 delete_if_in_set(E,[],[]).
 delete_if_in_set(E,[E|T],T) :-!.
@@ -45,12 +44,17 @@ equal_set(S1,S2) :-
 
 
 
+?- use_module(library(ordsets)).
+true.
 
 
+ord_intersection([[1,6],[1,4],[1,5]], I).
 
+ord_subtract([1,2,3,4], [3,4,5,6], S).
 
+ord_symdiff([1,2,3,4], [3,4,5,6], D).
 
-
+ord_union([[1,3,4,5,6,7],[2,3,7,8,9]], U).
 
 
 
