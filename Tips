@@ -1,0 +1,38 @@
+Tips on Writing Prolog Programs
+-------------------------------
+
+To write a Prolog program:
+
+1.
+Have a clear intended interpretation: what all predicates, functions and constants mean
+
+2.
+Don’t tell lies.
+(a) Make sure all clauses are true given your meaning for the constants, functions, predicates.
+(b) Make sure that the clauses cover all of the cases when a predicate is true.
+
+3.
+Avoid cycles. For example, be careful of predicates like path_between, 
+which may end up with path_between(X, Y) :- path_between(Y, X).
+
+4.
+To solve a complex problem break it into simpler problems.
+(a) Design top-down: Figure out the top-level predicates that you need. 
+    Write out their meanings and high-level notes on how they will work. Break them down in terms of simpler predicates.
+(b) Build bottom-up: Create, test, and debug the simplest predicates first. 
+    Then, build more complex ones on top of them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
