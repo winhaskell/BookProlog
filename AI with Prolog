@@ -1,5 +1,51 @@
-AI with Prolog
-https://intelligency.org/ai_prolog.php
+Prolog has a clear contribution in solving a series of Artificial Intelligence (AI) problems. 
+There are many features that make Prolog suitable as a programming language for developing AI applications. 
+Some of them are:
+
+
+Backtracking
+Even when a search path ends at a dead end, the backtracking mechanism of Prolog retreats back down the search path
+to try another path. This feature makes Prolog exceptionally suitable for a number of search problems that AI faces. 
+It also provides the additional advantage of finding more than one solution of the problem, in the case that backtracking 
+is forced, after finding a first solution. Because a great number of AI problems can be represented as a problem of finding 
+the right path in the search space, the built-in depth first mechanism of Prolog, accompanied with backtracking, make Prolog
+suitable for such applications.
+
+
+Don’t care and don’t know nondeterminism
+In the execution of a Prolog program, the nondeterminism feature is really apparent. Although the rule that will execute
+is the first one that matches the goal, we can ask for more than one solution. Using the backtracking mechanism, alternative 
+rules will apply and other valid solutions will be found. This introduces: a) “don’t know nondeterminism” implying that all
+possible ways to find the solutions will be followed because the execution does not know how to find the solution, or b)
+“don’t care nondeterminism” meaning that we just need one solution and we do not care which solution is that among the many 
+that exist. Both of these types of nondeterminsm are considered useful in AI applications, especially for those dealing with logic.
+
+
+List handling mechanism
+The data structure of List is very important for handling AI problems (e.g., LISP which is also used for solving AI problems,
+stands for ” LISt Processing”). Lists are built-in in Prolog while in most other languages they are not, making faster and easier 
+the writing of Prolog programs that require list handling. List’s recursive nature allows the extensive use of recursion in problem 
+solving, providing an additional advantage for solving AI problems with Prolog.
+
+
+Recursion, instead of Iteration
+Because iteration constructs are not provided in Prolog, recursion should be used instead. The simplicity of solving problems
+recursively makes Prolog programs smaller and understandable even when coping with large, real life AI problems. Additionally,
+many AI problems are recursive in nature, increasing the suitability of Prolog.
+
+
+Pattern matching and unification
+The use of unification to find the most general common instance of two formulas or patterns makes pattern matching a build-in
+feature of Prolog. This intelligent feature can assist AI problem solving where in many cases the decisions that are made are based 
+on situation matching. This Prolog ability can be found really helpful in specific areas of AI, such as natural language processing, 
+computer vision and intelligent database search.
+
+
+
+
+
+
+
 
 
 
