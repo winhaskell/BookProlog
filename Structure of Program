@@ -35,6 +35,18 @@ the line. In query mode you ask questions about relations described in the progr
 
 
 
+Loading a program
+
+loading First you have to launch your Prolog compiler, for this report we used the SWI-Prolog wich is a freeware. 
+When Prolog is launched the ?- should appear meaning you are in query mode. 
+The manier to launch a program depends of your compiler. 
+For SWI-Prolog you can load a program by typing the cammand [file]. when the file of your program is file.pl. 
+If you compiler is not SWI-Prolog you can also try the command reconsult(file). 
+When you have done this you can use all the facts and rules that are contained in the program. 
+
+
+
+
 
 
 
