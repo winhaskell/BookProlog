@@ -17,6 +17,19 @@ creating a (sometimes very sophisticated!) knowledge base, plus queries on that 
 
 
 
+Programming in Prolog is very different from programming in a traditional procedural procedural language like Pascal. 
+In Prolog you don't say how the program will work.
+
+Prolog can be separated in two parts :
+1. The Program
+The program, sometimes called Database is a texte file (*.pl) that contain the facts and rules that will be used by
+the user of the program. It contains all the relations that make this program.
+
+2. The Query
+When you launch a program you are in query modequery mode. This mode is represented by the sign ? - at the begining of
+the line. In query mode you ask questions about relations described in the program.
+
+
 
 
 
