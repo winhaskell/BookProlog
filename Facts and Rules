@@ -1,0 +1,105 @@
+Facts and Rules
+----------------------------------------------------------------------------------------------------
+
+Simple facts
+
+In Prolog we can make some statements by using facts. 
+Facts either consist of a particular item or a relation between items. 
+For example we can represent the fact that it is sunny by writing the program : sunny.
+We can now ask a query of Prolog by asking
+     ?- sunny.
+     
+?- is the Prolog prompt. To this query, Prolog will answer yes. 
+sunny is true because (from above) Prolog matches it in its database of facts.
+Facts have some simple rules of syntax. 
+Facts should always begin with a lowercase letter and end with a full stop. 
+The facts themselves can consist of any letter or number combination, as well as the underscore _ character. 
+However, names containing the characters -,+,*,/, or other mathematical operators should be avoided.
+
+
+
+
+Facts with arguments
+
+More complicated facts consist of a relation and the items that this refers to. 
+These items are called arguments. Facts can have arbitrary number of arguments from zero upwards. 
+A general model is shown below:
+     relation(<argument1>,<argument2>,....,<argumentN> ).
+The arguments can be any legal Prolog term. The basic Prolog terms are an integer, an atom, a variable or a structure. 
+Various Prolog implementation enhance this basic list with other data types, such as floating point numbers, or strings.
+Exemple :
+     likes(john,mary).
+In the above fact john and mary are two atomes. 
+Atoms are usally made from letters and digits with lowercase characters. 
+ 
+The fact likes(john,mary). say that there is a relation between john and mary. 
+It can be read as either john likes mary or mary likes john. 
+This reversibility can be very useful to the programmer, however it can also be a source of mistakes. 
+You have to be clear on how you intend to interpret the relation.
+The number of arguments is the arity of the predicate. 
+A predicate with 2 arguments will be called by predicate_name/2. 
+You can have differents predicats with the same name if they have a different arity.
+
+
+
+
+Rules
+
+Consider the following sentence : 'All men are mortal' We can express this thing in Prolog by : mortal(X) :- human(X).
+The clause can be read as 'X is mortal if X is human'.
+To continue with this example, let us define the fact that Socrate is a human. 
+Our program will be :
+     mortal(X) :- human(X).
+     human(socrate).
+Now if we ask to prolog :
+     ?- mortal(socrate).
+Prolog will respond :
+     yes
+In order to solve the query -? mortal(socrates). Prolog will use the rule we have given. 
+It says that in order to prove that someone is mortal we can prove that he is human. 
+So from the goal mortal(socrate) Prolog generate the subgoal human(socrate).
+We can still use variables. For example we might want to know who is mortal :
+     ?- mortal(X).
+Then Prolog should respond :
+     X = socrate
+This means that Prolog was able to succed the goal by unifying the variable X to socrates. 
+Again this was done by using the subgoal human(X).
+Sometimes we may wish to specify alternatives ways to provre something. 
+We can do this by using differents rules ands facts with the same name.
+
+
+
+
+How to add a rule with a program
+
+It is possible to add new rules or facts with the instruction Assert(fact1) which will add the fact called fact1. 
+The predicates added with this command are considereted like any other in the source of the program.
+
+Example
+     ?- sunny.
+     no.
+     
+     ?- assert(sunny).
+     yes.
+     
+     ?- sunny.
+     yes
+
+     ?- retract(sunny).
+     yes.
+
+     ?- sunny.
+     no.
+     
+     
+     
+     
+
+
+
+
+
+
+
+
+
