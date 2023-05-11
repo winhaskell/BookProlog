@@ -1,0 +1,22 @@
+https://www.dai.ed.ac.uk/groups/ssp/bookpages/quickprolog/node12.html
+
+Unification
+
+The way in which Prolog matches two terms is called unification. 
+The idea is similar to that of unification in logic: we have two terms and we want to see if 
+they can be made to represent the same structure.
+
+Ref
+Dave Stuart Robertson
+Tue Jul 7, 1998
+
+
+
+
+
+
+
+
+
+
+
