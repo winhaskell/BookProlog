@@ -207,7 +207,39 @@ X = a.
 
 
 
+Lists
+List is a widely used data structure which is build in Prolog. 
+It is still a term, e.g., [1,2,3] is equivalent to '.'(1,'.'(2,'.'(3,nil))). 
+The following functions enable access to list elements.
 
+head(H,[H|_]).
+tail(T,[_|T]). % T is list
+It is easy to access the first element of list as it corresponds to the head. 
+However, finding the last element is a time consuming process as one has to go through 
+the whole list to find it. Note that following "procedures" can be used to find the first/last 
+element of list as well as to test whether given element is first/last element of list. 
+It could even be used to generate list with given first/last element.
+
+first(F,[F|_]). % the same as head
+last(L,[L]).
+last(L,[H|T]):-last(L,T).
+The similar conclusion also holds for finding prefix and suffix respectively. 
+Again, the same procedure can be used to test or generate prefix/suffix respectively 
+as well as to generate list with given prefix/suffix. Try it.
+
+prefix([],_).
+prefix([H|T1],[H|T2]):-prefix(T1,T2).
+suffix(S,S).
+suffix([H|T],L):-suffix(T,L).
+
+Testing membership is an important method for working with lists. 
+Prolog definiton of member can test membership relation as well as generate successive members of list. 
+A similar function, nth_member, can also be used to test or to generate n-th member of list. 
+However, it can not be used to count a sequence number of given element (define the function that counts 
+a sequence number of given element as your homework).
+
+member(X,[X|_]).
+member(X,[_|T]):-member(X,T).
 
 
 
