@@ -1,0 +1,60 @@
+Wiki Prolog
+
+编程范型	逻辑式
+设计者	Alain Colmerauer，罗伯特·科瓦尔斯基
+发行时间	1972年
+文件扩展名	.pl, .pro, .P
+
+主要实现产品
+B-Prolog, Ciao语言, ECLiPSe, GNU Prolog, Poplog Prolog, P#, Quintus Prolog, SICStus, Strawberry, SWI-Prolog, Tau Prolog, tuProlog, WIN-PROLOG, XSB, YAP
+
+派生副语言
+ISO Prolog, Edinburgh Prolog
+
+启发语言
+PLANNER
+
+影响语言
+CHR、Clojure、Datalog、Erlang、KL0、KL1、Mercury、Oz、Strand、Visual Prolog、XSB
+
+
+历史
+Prolog语言的理论基础创建于爱丁堡大学的罗伯特·科瓦尔斯基对霍恩子句（Horn Clause）的程序性解释，
+最早由艾克斯-马赛大学的Alain Colmerauer与Phillipe Roussel等人于60年代末研究开发。
+1972年被公认为是Prolog语言正式诞生的年份，自1972年以后，分支出多种Prolog的方言。最主要的两种方言为爱丁堡和艾克斯-马赛。
+最早的Prolog解释器由Roussel建造，而第一个Prolog编译器则是David Warren编写的。
+Prolog一直在北美和欧洲被广泛使用。日本政府曾经为了建造智能计算机而用Prolog来开发ICOT第五代计算机系统。
+在早期的机器智能研究领域，Prolog曾经是主要的开发工具。
+80年代Borland开发的Turbo Prolog，进一步普及了Prolog的使用。1995年确定了ISO Prolog标准。
+
+
+
+特点
+有别于一般的函数式语言，prolog的程序是基于谓词逻辑的理论。
+最基本的写法是定义对象与对象之间的关系，之后可以用询问目标的方式来查询各种对象之间的关系。
+系统会自动进行匹配及回溯，找出所询问的答案。
+Prolog代码中以大写字母开头的元素是变量，字符串、数字或以小写字母开头的元素是常量。下划线（_）被称为匿名变量。
+
+
+
+前提
+前提（英语：Premise）是有助于形成论证主体的真或假陈述，从逻辑上讲，它会导致真或假结论。
+前提对其主题进行声明性（英语：declarative）陈述，使读者可以同意或不同意所讨论的前提，并在这样做时理解论证的逻辑假设。 
+如果一个前提在逻辑上是错误的，那么从论证的所有前提得出的结论也一定是错误的—除非结论得到读者同意的逻辑上有效的论证的支持。 
+因此，如果读者不同意论证的任何前提，他们就有逻辑基础拒绝论证的结论。
+
+前提是逻辑中的要求或假设；它是一个陈述，从中得出合乎逻辑的结论。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
