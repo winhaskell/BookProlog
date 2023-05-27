@@ -1,0 +1,75 @@
+Lets look at a fact in detail:
+
+likes(john, mary).
+This specifies a relationship between two objects: the object john and the object mary are in the likes relationship.
+
+Note the following:
+
+The names of relationships and objects must start with a lowercase letter. 
+
+In Prolog, uppercase letters are variables.
+The name of a relationship is often called a predicate, i.e. likes is a predicate.
+The likes predicate is binary, i.e. it has an arity of 2. It has two arguments, john and mary.
+
+In general, the order of arguments matters, i.e. likes(john, mary). is not the same fact as likes(mary, john).
+Object names, such as john and mary, are similar to symbols in Lisp. 
+
+They are not strings. All we can do is test if two objects are the same or different — we can’t access their individual characters.
+The dot character . must always come at the end of a fact.
+
+Here are a few more examples of facts:
+
+fat(homer).                  % homer is fat
+male(homer).                 % homer is a male
+father_of(homer, bart).      % homer is bart's father
+kicked(itchy, scratchy).     % itchy kicked scratchy
+stole(bart, donut, homer).   % bart stole the donut from homer
+
+We often refer to a list of facts as a database, or knowledge base (KB). 
+Indeed, as you will see, Prolog is sin ome ways similar to relational database system.
+
+The names used here have no special meaning in Prolog, and could just as well been written like this:
+
+a(b).
+c(b).
+d(b, e).
+f(g, h).
+i(e, j, b).
+
+Of course, this is much harder to read!
+
+Exercise. 
+
+Translate each of the following facts into Prolog. Use English words and names to make them easy to read.
+
+Gold is valuable.
+Water is wet.
+Emily kissed Thompson.
+Jimi kissed the skycity.
+niko is a cat.
+
+
+Solutions.
+
+valuable(gold).
+wet(water).
+kissed(emily, Thompson).
+kissed(jim, skycity).
+cat(niko).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
