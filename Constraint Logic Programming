@@ -3,9 +3,54 @@ Constraint Logic Programming
 https://courses.cs.washington.edu/courses/cse599f1/17wi/clp/index.html
 https://www.metalevel.at/prolog/clpz
 
+https://www.swi-prolog.org/man/clpfd.html
+library(clpfd): CLP(FD): Constraint Logic Programming over Finite Domains
+
+http://www.nct9.ne.jp/m_hiroi/prolog/clp.html
+制約論理プログラミング超入門
+
 
 ?- use_module(library(clpfd)).
 true.
+
+
+
+
+制約プログラミングとは？
+制約プログラミングは、変数の範囲や変数間の関係を制約という形で宣言的に記述します。これがプログラムになり、それを「制約ソルバー」で実行し、
+制約を満たす解を探索します。制約プログラミングの分野としては、数理計画法 (Mathematical Programing)、制約充足問題 (CSP : Constraint Staisfaction Problem) 
+や制約最適化問題 (COP : Constraint Optimization Problem) などがあります。
+
+数理計画法は、変数に関する不等式や等式で表される制約の条件下で、目的の関数を最小 (あるいは最大) にする変数の値を求める問題です。特に、
+制約条件と目的関数が線形方程式で表される「線形計画法 (liner programming)」の分野では、「単体法 (simplex method)」という高速な解法アルゴリズムがあって、非常に広範囲な分野で使用されています。
+
+また、変数の値が整数値しかとらない場合を「整数計画法 (integer programing)」といいます。特に、変数の値が 0 と 1 しかとらない場合を「0-1 整数計画法 (0-1 integer programming)」といいます。
+
+CSP は、変数 xi の集合を X, xi の取り得る値 Diの集合を D, xi と xj の間の制約 Cij を表す集合を C とすると、X のすべての変数に対して
+制約 C をすべて満たす値の割り当てを求める問題になります。COP は制約をすべて満たした上で、ある値の最大値 (または最小値) を求める問題です。
+なお、整数計画法や CSP, COP は NP 問題になるので、変数の数や変数の領域 (domain) が大きくなると、現実的な時間で解を求めるのは大変困難になります。
+
+制約論理プログラミングは 1987 年に IBM の Jaffer 氏と Lassez 氏によって理論化されました。これを CLP(X) といい、扱うデータによって次のように分類されます。
+
+CLP(B): Constraint Logic Programming over Boolean Variables
+真偽値, SWI-Prolog のライブラリ名 clpb
+
+CLP(R): Constraint Logic Programming over Reals
+実数, SWI-Prolog のライブラリ名 clpqr
+
+CLP(Q): Constraint Logic Programming over Rationals and Reals
+有理数, SWI-Prolog のライブラリ名 clpqr
+
+CLP(FD): Constraint Logic Programming over Finite Domains
+有限領域 (整数), SWI-Prolog のライブラリ名 clpfd
+
+整数計画法や CSP の多くは CLP(FD) の範囲で取り扱うことができると思われます。本ページでは、これらの問題をメインに取り上げることにします。
+
+
+
+
+
+
 
 
 
@@ -41,6 +86,12 @@ Or we can try just labelling one variable:
 
 In nearly all cases this gives a unique solution.
 */
+
+
+
+
+
+
 
 
 
