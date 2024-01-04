@@ -1,0 +1,14 @@
+Simsttab: A timetabling engine for schools
+
+https://www.metalevel.at/simsttab/
+
+Simsttab stands for Simplistic School Time-Tabler. 
+It is a timetabling engine that can generate timetables satisfying requirements typical for secondary schools 
+in Austria ("Gymnasium"-type), Germany and maybe other European countries.
+
+Source code: simsttab.pl
+
+Video:	School Timetabling with Prolog
+
+The code is also available from a public git repository: https://github.com/triska/simsttab/
+
