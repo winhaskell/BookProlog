@@ -1,0 +1,14 @@
+Why Learning Prolog Can Make You a Better Programmer
+
+In Computer Science programs, there is a tradition of having a course of two that represent the watershed between people 
+that can grok CS concepts and the ones that can’t. Although anyone can do some programming in a language like Java, 
+where anecdotal evidence seems to show that the most complicated concept is class, it takes real intelligence to do something useful in C or Lisp.
+
+At my Alma mater, a course in Prolog was the division line between the hopeful and the real CS guys. The reasoning being that 
+if you could get your head around a Prolog interpreter written in Prolog, then you can probably handle any programming concept.
+
+These days however, CS programs are more interested in teaching marketable languages such as Java, Python, or Ruby. 
+It seems like that they are looking for ways of getting people through the program as quick as possible (maybe before they realize where they are really going into).
+
+https://coliveira.net/software/why-learning-prolog-can-make-you-a-better-programmer/
+
