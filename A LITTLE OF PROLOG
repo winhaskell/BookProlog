@@ -1,0 +1,24 @@
+A LITTLE OF PROLOG
+
+Nowadays Prolog is not as trendy as it used to be, although at one time it was the main competitor of Lisp as a high level language 
+for complex applications (at least for AI-people living in Europe). However, it is often said that it is an advantage to learn Lisp
+even if it is just for the learning experience.
+
+I think it is just as fair to say the same of Prolog, and here are some of the reasons why Prolog still has something to teach most programmers.
+
+Prolog can be though as a pure functional language. In fact, it is so pure that the only values it returns are the literals true or false! 
+In Prolog, everything happens as a binding of parameters, so there are no variables to update — only method calls, which will match parameter values to formal arguments.
+
+The language provides a simple mechanism for accessing databases. Databases are viewed in Prolog as a set of facts that can be consulted by the rules. 
+In this way, access to external data is treated in a logical fashion, instead of requiring imperative actions to fetch and read data. 
+The Prolog model provides reduced impedance between code and data, which is a good thing.
+
+Provides a simple way to represent declarative programs. Prolog is based on matching rules in a way that is transparent to developers. 
+It tries to satisfy the requirements of each declared boolean function using its internal rule-matching engine. 
+It is easy to think of this as a non-deterministic machine that just does the right thing as needed, without programming intervention. 
+Of course, this machinery won’t solve any problem without some additional help, but by necessity it frees the developer from thinking on
+how things are done, and concentrate instead in what is being done.
+
+In summary, I think that good programmers should explore alternative ways to create software. Learning languages with a different paradigm, 
+such as logic programming, is an excellent way of challenging traditional thinking processes. Understanding how things could be written in
+Prolog may provide better solutions to practical problems, even if you need to write the resulting code in C.
